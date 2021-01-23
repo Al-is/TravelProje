@@ -1,0 +1,14 @@
+﻿
+
+<div class="content-form">
+    <h3>Yorum Ekle</h3>
+   
+    <form method="post">
+        <input type="hidden" placeholder="ID" name="Blogid" value=" @ViewBag.deger" required disabled="disabled"/>
+
+        <input type="text" placeholder="Ad" name="KullaniciAdi" required/>
+        <input type="text" placeholder="Email" name="Mail" required/>
+        <textarea placeholder="Mesaj" name="Yorum"></textarea>
+        <input type="submit" value="GÖNDER"/>
+    </form>
+</div>

@@ -1,0 +1,100 @@
+﻿@model TravelProje.Models.Sınıflar.BlogYorumlar
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!--end slider -->
+    <!--script-->
+    @*<script type="text/javascript" src="~/web2/js/move-top.js"></script>
+        <script type="text/javascript" src="~/web2/js/easing.js"></script>*@
+    <!--/script-->
+    @*<script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+                });
+            });
+        </script>*@
+    <!---->
+
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+        <div class="container">
+
+            <!---start-top-nav---->
+
+            <div class="clearfix"></div>
+
+            <!---//End-top-nav---->
+        </div>
+    </div>
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var i in Model.deger1)
+                {
+                    <div class="single-grid">
+                        <img src="@i.BlogImage" alt="" />
+                        <br /> <br />
+                        <a href="/Blog/BlogDetay/@i.ID">@i.Baslik</a>
+                        <p>@i.Aciklama</p>
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>SON BLOGLAR</h3>
+                    @foreach (var i in Model.deger3)
+                    {
+                        <ul>
+                            <li><a href="/Blog/BlogDetay/@i.ID">@i.Baslik</a></li>
+                        </ul>
+                    }
+
+                </div>
+                <div class="comments">
+
+                    <h3>SON YORUMLAR</h3>
+                    @foreach (var i in Model.deger4)
+                    {
+                        <ul>
+                            <li><a href="#">@i.KullaniciAdi </a> <br /> <a href="#"> @i.Yorum </a></li>
+
+                        </ul>
+                    }
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+
+</html>
